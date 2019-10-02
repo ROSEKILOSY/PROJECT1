@@ -1,0 +1,57 @@
+import datetime
+class user #the first user
+def_init_(self,name,lastloggedIn = None)
+self.name = name
+self.loggedin = False
+self.lastloggedIn =lastloggedIn
+
+def name(self):
+print self.name
+def.name(self,value):
+self.name = value
+
+def last_logged_in_at(self):
+print self.lastloggedIn
+
+def log_in(self):
+self.loggedIn =True
+self.lastloggedIn = datetime.datetime
+
+def can_edit(self,comment):
+if comment.author.name ==self.name
+print True
+else:
+print False
+
+def can_delete(self,comment):
+print True
+
+class moderator(user):
+def_init__(self, name):
+user__init__(self,name)
+
+def can_delet(self,comment):
+print True
+
+class admin(moderator):
+def__init__(self,name):
+
+def can_edit(self,comment):
+print True
+
+class comment:
+def__init__(self, author, message):
+self.author=author
+self.message= message
+
+def author(self):
+print self.author
+
+def author(self, value):
+self.author =value
+
+def message(self):
+print self.message
+
+def message(self,value):
+self.message=value

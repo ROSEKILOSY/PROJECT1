@@ -1,0 +1,77 @@
+import datetime
+class user
+def_init_(self,name,lastloggedIn = None)
+self.name = name
+self.loggedin = False
+self.lastloggedIn = lastloggedIn
+
+def name(self):
+print self.name
+def.name(self,value):
+self.name = value
+
+def last_logged_in_at(self):
+print self.lastloggedIn
+
+def log_in(self):
+self.loggedIn =True
+self.lastloggedIn = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
+
+def log_out(self):
+self.loggedIn= False
+
+def can_edit(self,comment):
+if comment.author.name == self.name
+print True
+else:
+print False
+
+def can_delete(self,comment):
+print True
+
+class moderator(user):
+    def_init__(self,name):
+    user__init__(self,name)
+
+    def can_delete(self,comment):
+        print True
+
+        class admin(moderator):
+            def__init__(self,name):
+            moderator.__init__(self,name)
+
+            def can_edit(self,comment):
+                print True
+
+class comment:
+    def__init__(self,author,message,replied_to =None, createdAt =None):
+    self.createdAt= datetime.datetime.now().strftime("%Y-%M-%D %H:%M:%S")
+    self.author = author
+    self.message =message
+    self.replied_to = replied_to
+
+    def author(self):
+        print self._author
+
+        def author(self, value):
+            self.author = value
+
+            def message(self):
+                print self.message
+
+                def message(self, value):
+                    self.message = value
+
+                    def created_at(self):
+                        print self.createdAt
+
+                        def replied_to(self):
+                            print  self.replied_to
+
+                            def replied_to(self, value):
+                                self.replied_to = value
+
+                                def to_string(self):
+                                    if self.replied_to == None:
+                                        print self.replied_to + "by" + self.author.name
+
